@@ -1,0 +1,31 @@
+{
+  "name": "post-language-server",
+  "keywords": [
+    "theia-extension"
+  ],
+  "version": "0.0.0",
+  "files": [
+    "data",
+    "lib",
+    "src"
+  ],
+  "dependencies": {
+    "@theia/core": "latest"
+  },
+  "devDependencies": {
+    "rimraf": "latest",
+    "typescript": "latest"
+  },
+  "scripts": {
+    "prepare": "yarn run clean && yarn run build",
+    "clean": "rimraf lib",
+    "build": "tsc",
+    "watch": "tsc -w"
+  },
+  "theiaExtensions": [
+    {
+      "frontend": "lib/browser/language-server-frontend-module",
+      "backend": "lib/node/language-server-backend-module"
+    }
+  ]
+}

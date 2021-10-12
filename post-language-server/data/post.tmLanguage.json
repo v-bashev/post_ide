@@ -1,0 +1,57 @@
+{
+	"name": "poST",
+	"scopeName": "source.post",
+	"fileTypes": [
+		"post"
+	],
+	"foldingStartMarker": "\\{\\s*$",
+	"foldingStopMarker": "^\\s*\\}",
+	"patterns": [
+		{
+			"name": "constant.numeric.decimal",
+			"match": "\\b[0-9]+(?:.[0-9]+)?\\b"
+		},
+		{
+			"name": "constant.numeric.hexadecimal",
+			"match": "\\b0x[0-9a-fA-F]+\\b"
+		},
+		{
+			"name": "constant.numeric.bool",
+			"match": "\\b(?:TRUE|FALSE)\\b"
+		},
+		{
+			"name": "keyword.post",
+			"match": "\\b(?<!\\-)(CONFIGURATION|END_CONFIGURATION|RESOURCE|ON|END_RESOURCE|TASK)\\b(?!-)"
+		},
+		{
+			"name": "keyword.other.post",
+			"match": "\\b(?:PROGRAM|END_PROGRAM|FUNCTION_BLOCK|END_FUNCTION_BLOCK|FUNCTION|END_FUNCTION|PROCESS|END_PROCESS|STATE|END_STATE|LOOPED|TIMEOUT|END_TIMEOUT)\\b"
+		},
+		{
+			"name": "keyword.other.post",
+			"match": "\\b(?:VAR_INPUT|VAR_OUTPUT|VAR_IN_OUT|VAR|VAR_TEMP|VAR_EXTERNAL|VAR_GLOBAL|VAR_PROCESS|END_VAR|CONSTANT)\\b"
+		},
+		{
+			"name": "keyword.other.post",
+			"match": "\\b(?:SET|IN|START|RESTART|STOP|ERROR|RESET|TIMER)\\b"
+		},
+		{
+			"name": "keyword.other.post",
+			"match": "\\b(?:IF|THEN|ELSIF|ELSE|END_IF|CASE|OF|END_CASE|FOR|DO|END_FOR|TO|BY|WHILE|END_WHILE|REPEAT|UNTIL|END_REPEAT|RETURN|EXIT)\\b"
+		},
+		{
+			"name": "comment.block.post",
+			"begin": "/\\*",
+			"end": "\\*/"
+		},
+		{
+			"name": "comment.block.post",
+			"begin": "(\\*",
+			"end": "\\*)"
+		},
+		{
+			"name": "comment.line.double-slash.post",
+			"match": "\\s*//.*$"
+		}
+	]
+}

@@ -1,0 +1,9 @@
+{
+  "id": "r2c",
+  "name": "R2C generator",
+  "parameters": {
+    "parameter1": "string",
+    "parameter2": "boolean",
+    "parameter3": "number"
+  }
+}

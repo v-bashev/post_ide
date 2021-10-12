@@ -1,0 +1,30 @@
+{
+  "name": "generators",
+  "keywords": [
+    "theia-extension"
+  ],
+  "version": "0.0.0",
+  "files": [
+    "lib",
+    "src"
+  ],
+  "dependencies": {
+    "@theia/core": "latest"
+  },
+  "devDependencies": {
+    "rimraf": "latest",
+    "typescript": "latest"
+  },
+  "scripts": {
+    "prepare": "yarn run clean && cp ../../xtext/ru.iaie.reflex.languagetools/build/libs/ru.iaie.reflex.languagetools.jar build && yarn run build",
+    "clean": "rimraf lib",
+    "build": "tsc",
+    "watch": "tsc -w"
+  },
+  "theiaExtensions": [
+    {
+      "frontend": "lib/browser/generator-frontend-module",
+      "backend": "lib/node/generators-server-module"
+    }
+  ]
+}
