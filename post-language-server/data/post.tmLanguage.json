@@ -4,8 +4,6 @@
 	"fileTypes": [
 		"post"
 	],
-	"foldingStartMarker": "\\{\\s*$",
-	"foldingStopMarker": "^\\s*\\}",
 	"patterns": [
 		{
 			"name": "constant.numeric.decimal",
@@ -20,12 +18,16 @@
 			"match": "\\b(?:TRUE|FALSE)\\b"
 		},
 		{
-			"name": "keyword.post",
-			"match": "\\b(?<!\\-)(CONFIGURATION|END_CONFIGURATION|RESOURCE|ON|END_RESOURCE|TASK)\\b(?!-)"
+			"name": "keyword.other.post",
+			"match": "\\b(?:CONFIGURATION|END_CONFIGURATION|RESOURCE|ON|END_RESOURCE|TASK)\\b"
 		},
 		{
 			"name": "keyword.other.post",
 			"match": "\\b(?:PROGRAM|END_PROGRAM|FUNCTION_BLOCK|END_FUNCTION_BLOCK|FUNCTION|END_FUNCTION|PROCESS|END_PROCESS|STATE|END_STATE|LOOPED|TIMEOUT|END_TIMEOUT)\\b"
+		},
+		{
+			"name": "keyword.other.post",
+			"match": "\\b(?:SINT|INT|DINT|LINT|USINT|UINT|UDINT|ULINT|REAL|LREAL|BOOL|BYTE|WORD|DWORD|LWORD|TIME|STRING|WSTRING)\\b"
 		},
 		{
 			"name": "keyword.other.post",
@@ -41,17 +43,8 @@
 		},
 		{
 			"name": "comment.block.post",
-			"begin": "/\\*",
-			"end": "\\*/"
-		},
-		{
-			"name": "comment.block.post",
-			"begin": "(\\*",
-			"end": "\\*)"
-		},
-		{
-			"name": "comment.line.double-slash.post",
-			"match": "\\s*//.*$"
+			"begin": "(?:/|\\()\\*",
+			"end": "\\*(?:/|\\))"
 		}
 	]
 }
