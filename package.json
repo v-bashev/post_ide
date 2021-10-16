@@ -7,9 +7,12 @@
   },
   "devDependencies": {
     "lerna": "2.4.0",
-    "ts-node": "^8.10.1"
+    "ts-node": "^8.10.2"
   },
   "workspaces": [
-    "post-language-server","ast-service", "dsm-wrapper", "browser-app"
+    "post-language-server",
+    "ast-service",
+    "dsm-wrapper",
+    "browser-app"
   ]
 }

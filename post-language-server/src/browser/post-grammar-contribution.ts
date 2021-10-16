@@ -4,7 +4,7 @@ import { POST_LANGUAGE_FILE_EXTENSION, POST_LANGUAGE_SERVER_ID, POST_LANGUAGE_SE
 
 @injectable()
 export class PoSTGrammarContribution implements LanguageGrammarDefinitionContribution {
-    readonly scopeName = 'source.post';
+    readonly scopeName = "source.post";
 
     registerTextmateLanguage(registry: TextmateRegistry) {
         monaco.languages.register({
@@ -20,7 +20,6 @@ export class PoSTGrammarContribution implements LanguageGrammarDefinitionContrib
             ]
         });
         monaco.languages.setLanguageConfiguration(POST_LANGUAGE_SERVER_ID, this.configuration);
-        monaco.languages.register
 
         registry.registerTextmateGrammarScope(this.scopeName, {
             async getGrammarDefinition() {
