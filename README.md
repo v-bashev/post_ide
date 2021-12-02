@@ -1,4 +1,10 @@
 # post_ide
+Theia-Based IDE for the poST language (desktop / web)
+## References
+- Instructions for working with the poST core: https://github.com/v-bashev/post_core/wiki 
+- poST core: https://github.com/v-bashev/post_core
+- poST to ST generation module: https://github.com/v-bashev/post_to_st 
+- poST to ST web transtator: http://post2st.iae.nsk.su
 ## Build
 ```
 yarn
