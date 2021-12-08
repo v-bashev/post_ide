@@ -25,5 +25,5 @@ yarn run start --hostname <hostname> --port <port>
 sudo apt update
 curl -sL https://deb.nodesource.com/setup_10.x | sudo bash -
 sudo apt-get install -y nodejs
-sudo npm install --global yarn
+npm install --global yarn
 ```
