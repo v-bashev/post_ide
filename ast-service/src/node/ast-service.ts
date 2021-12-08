@@ -48,7 +48,7 @@ export class AstService implements IAstService, BackendApplicationContribution {
 
     private async startServer(port: number) {
         const serverPath = path.resolve(__dirname, '..', '..', 'build');
-        const jarPaths = glob.sync('**/ru.iae.reflex.astwrapper-1.0-SNAPSHOT.jar', { cwd: serverPath });
+        const jarPaths = glob.sync('**/su.nsk.iae.post.astwrapper-1.0.jar', { cwd: serverPath });
         if (jarPaths.length === 0) {
             throw new Error('The AST Wrapper server launcher is not found.');
         }

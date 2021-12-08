@@ -1,10 +1,10 @@
-import {inject, injectable} from "inversify";
-import {Command, CommandRegistry, MenuContribution, MenuModelRegistry, SelectionService} from "@theia/core/lib/common";
-import {IDSMWrapperServer} from "../common/dsm-wrapper-protocols";
-import {UriAwareCommandHandler} from '@theia/core/lib/common/uri-command-handler';
+import { inject, injectable } from "inversify";
+import { Command, CommandRegistry, MenuContribution, MenuModelRegistry, SelectionService } from "@theia/core/lib/common";
+import { IDSMWrapperServer } from "../common/dsm-wrapper-protocols";
+import { UriAwareCommandHandler } from '@theia/core/lib/common/uri-command-handler';
 import URI from "@theia/core/lib/common/uri";
-import {DSMDialog} from "./dsm-dialog";
-import {DSMParameter, DSMParameterType} from "./dsm-parameter";
+import { DSMDialog } from "./dsm-dialog";
+import { DSMParameter, DSMParameterType } from "./dsm-parameter";
 
 @injectable()
 export class DSMMenuContribution implements MenuContribution {

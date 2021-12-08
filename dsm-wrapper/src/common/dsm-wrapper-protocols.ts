@@ -1,7 +1,7 @@
 import { JsonRpcServer } from '@theia/core/lib/common/messaging';
 
 // TODO: Find a way to get root dir without it
-export const postTheiaRoot = '/mnt/c/Users/vlad-/post_theia';
+export const postTheiaRoot = '/home/vlad/post_ide/';
 
 export const dsmWrapperServicePath = '/services/dsmWrapper';
 

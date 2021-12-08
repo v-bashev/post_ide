@@ -42,6 +42,10 @@
 			"match": "\\b(?:IF|THEN|ELSIF|ELSE|END_IF|CASE|OF|END_CASE|FOR|DO|END_FOR|TO|BY|WHILE|END_WHILE|REPEAT|UNTIL|END_REPEAT|RETURN|EXIT)\\b"
 		},
 		{
+			"name": "comment.line.double-slash.post",
+			"match": "\\s*//.*$"
+		},
+		{
 			"name": "comment.block.post",
 			"begin": "(?:/|\\()\\*",
 			"end": "\\*(?:/|\\))"
