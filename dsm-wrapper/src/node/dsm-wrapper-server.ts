@@ -52,7 +52,7 @@ export class DSMWrapperServer implements IDSMWrapperServer, BackendApplicationCo
         const fileStat = await this.fileSystem.getFileStat("file:" + postTheiaRoot + "dsm-wrapper/DSMs/Configurations");
         const files = fileStat?.children?.filter(stat => stat.uri.endsWith('.json'));
         if (files) {
-            return await Promise.all(files.map( async fileStat => {
+            return await Promise.all(files.map(async fileStat => {
                 return await new Promise<DSMConfiguration>(async (res, rej) => {
                     let encoding = "utf8";
                     const resolved = await this.fileSystem.resolveContent(fileStat.uri, { encoding });

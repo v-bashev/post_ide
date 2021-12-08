@@ -16,7 +16,7 @@
     "typescript": "latest"
   },
   "scripts": {
-    "prepare": "yarn run clean && cp ../../xtext/ru.iaie.reflex.languagetools/build/libs/ru.iaie.reflex.languagetools.jar build && yarn run build",
+    "prepare": "yarn run clean && yarn run build",
     "clean": "rimraf lib",
     "build": "tsc",
     "watch": "tsc -w"
