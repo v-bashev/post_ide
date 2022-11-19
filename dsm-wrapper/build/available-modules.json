@@ -1,0 +1,6 @@
+{
+  "directory": "/src/dsm-wrapper/build/dsms/",
+  "modulesJarNames": [
+    "post2st", "post2xml"
+  ]
+}
