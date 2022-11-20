@@ -47,14 +47,10 @@ export class DSMWrapperServer implements IDSMWrapperServer, BackendApplicationCo
                     const DSMs: string[] = [];
                     const content = JSON.parse(result)['content'];
                     content['modules']?.forEach((module: any) => DSMs.push(module['name']))
-                    if (DSMs.length > 0) {
-                        resolve(DSMs);
-                    } else {
-                        resolve(this.scanDSMs());
-                    }
+                    resolve(DSMs);
                 });
             } else {
-                reject(new Error('No connection to AST wrapper server'));
+                reject(new Error('No connection to DSM manager server'));
             }
         }));
     }
