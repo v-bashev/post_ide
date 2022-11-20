@@ -12,7 +12,8 @@
     "@theia/core": "latest",
     "@theia/filesystem": "latest",
     "@theia/workspace": "latest",
-    "ast-service": "0.0.0"
+    "ast-service": "0.0.0",
+    "properties-reader": "latest"
   },
   "devDependencies": {
     "rimraf": "latest",

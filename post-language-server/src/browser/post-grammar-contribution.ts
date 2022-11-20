@@ -5,6 +5,7 @@ import { POST_LANGUAGE_FILE_EXTENSION, POST_LANGUAGE_SERVER_ID, POST_LANGUAGE_SE
 @injectable()
 export class PoSTGrammarContribution implements LanguageGrammarDefinitionContribution {
     readonly scopeName = "source.post";
+    readonly scopeNameST = "source.st";
 
     registerTextmateLanguage(registry: TextmateRegistry) {
         monaco.languages.register({
@@ -30,6 +31,15 @@ export class PoSTGrammarContribution implements LanguageGrammarDefinitionContrib
             }
         });
         registry.mapLanguageIdToTextmateGrammar(POST_LANGUAGE_SERVER_ID, this.scopeName);
+
+        registry.registerTextmateGrammarScope(this.scopeNameST, {
+            async getGrammarDefinition() {
+                return {
+                    format: 'json',
+                    content: require('../../data/post.tmLanguage.json')
+                }
+            }
+        });
     }
 
     protected configuration: monaco.languages.LanguageConfiguration = {

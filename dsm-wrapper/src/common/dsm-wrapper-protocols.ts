@@ -8,7 +8,7 @@ export const dsmWrapperServicePath = '/services/dsmWrapper';
 export const IDSMWrapperServer = Symbol('IDSMWrapperServer');
 
 export interface IDSMWrapperServer extends JsonRpcServer<IDSMWrapperClient> {
-    scanDSMs(): Promise<DSMConfiguration[]>;
+    scanDSMs(): Promise<string[]>;
 
     runDSM(id: string, uri: string[], serializedParameters?: string): Promise<void>;
 }
