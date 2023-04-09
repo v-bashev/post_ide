@@ -41,18 +41,24 @@ export class DSMWrapperServer implements IDSMWrapperServer, BackendApplicationCo
     }
 
     async scanDSMs(): Promise<string[]> {
-        return new Promise<string[]>(((resolve, reject) => {
+        return new Promise<string[]>(((resolve, _) => {
             if (this.connection) {
-                this.getRequest('alive-modules').then(result => {
-                    const DSMs: string[] = [];
-                    const content = JSON.parse(result)['content'];
-                    content['modules']?.forEach((module: any) => DSMs.push(module['name']))
-                    resolve(DSMs);
-                });
+                this.resolveDSMs(resolve);
             } else {
-                reject(new Error('No connection to DSM manager server'));
+                setTimeout(() => this.resolveDSMs(resolve), 2000);
             }
         }));
+    }
+
+    private resolveDSMs(resolve: (value: string[] | PromiseLike<string[]>) => void): void {
+        this.getRequest('alive-modules').then(result => {
+            const DSMs: string[] = [];
+            const content = JSON.parse(result)['content'];
+            content['modules']?.forEach((module: any) => DSMs.push(module['name']))
+            resolve(DSMs);
+        }).catch(_ => {
+            this.resolveDSMs(resolve)
+        });
     }
 
     runDSM(id: string, uri: string[], serializedParameters?: string): Promise<void> {
@@ -199,13 +205,14 @@ export class DSMWrapperServer implements IDSMWrapperServer, BackendApplicationCo
                 res.setEncoding('utf8');
                 res.on('data', data => {
                     resolve(data)
-                })
+                });
                 res.on('error', error => {
                     reject(error)
-                })
-            })
+                });
+            });
+            request.setTimeout(2000);
             request.on('error', (e) => {
-                this.showError(`Error with request: ${e.message}`);
+                reject(e)
             });
             if (body != undefined) {
                 request.write(body);
